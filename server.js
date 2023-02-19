@@ -18,14 +18,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
  app.use(express.static(__dirname))
 
 app
-  .get("/api/data", (req, res) => {
+  .get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
   })
   .on("error", (err) => {
     console.log("Error: " + err.message);
   });
 
-app.post("/", (req, res) => {
+app.post("/api/data", (req, res) => {
   city = req.body.cityName;
   let url =
   "https://api.openweathermap.org/data/2.5/weather?q=" +
