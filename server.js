@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
  app.use(express.static(__dirname))
 
 app
-  .get("/", (req, res) => {
+  .get("/api/data", (req, res) => {
     res.sendFile(__dirname + "/index.html");
   })
   .on("error", (err) => {
